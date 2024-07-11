@@ -1,0 +1,65 @@
+<div class="container" style="padding: 30px">
+  <div class="">
+    <div class="col-md-12">
+      <div class="centered-box">
+        <div class="col">
+          <div>
+            <div
+              style="
+                display: grid;
+                align-items: center;
+                place-content: center;
+                padding-top: 100px;
+              "
+            >
+              <h3>Verdict is the World's 1st Real-Time Research Service​</h3>
+              <div style="display: flex; place-content: center">
+                <input
+                  style="width: 400px"
+                  type="text"
+                  [(ngModel)]="inputVal"
+                />
+
+                <button
+                  type="submit"
+                  class="btn btn-primary btn-block"
+                  (click)="OnHandleClick()"
+                >
+                  Search
+                </button>
+              </div>
+            </div>
+
+            <!-- Filtering and displaying results -->
+            <div
+              [hidden]="inputVal.length <= 1"
+              style="display: flex; place-content: center"
+            >
+              <table>
+                <tbody>
+                  <tr
+                    style="display: flex; place-content: center;  border: 1px solid black; padding: 5px;"
+                    *ngFor="let hero of data | filter : inputVal!"
+                  >
+                    <td
+
+                      [innerHTML]="hero.Company"
+                      (click)="trClicked(hero.Id)"
+                    ></td>
+                    <!-- <td [innerHTML]="hero.ExchangeName"></td> -->
+
+                    <!-- <td>
+                      <div (click)="trClicked(hero.Id)">
+                        {{ hero.Company }}
+                      </div>
+                    </td> -->
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
