@@ -43,20 +43,32 @@
                       place-content: center;
                       border: 1px solid black;
                       padding: 5px;
+                      cursor: pointer; /* Add cursor pointer for hover effect */
                     "
-                    *ngFor="let hero of data | filter : inputVal!"
+                    *ngFor="let hero of data | filter : inputVal"
                   >
                     <td
                       [innerHTML]="hero.Company"
                       (click)="trClicked(hero.Id)"
                     ></td>
-                    <!-- <td [innerHTML]="hero.ExchangeName"></td> -->
-
-                    <!-- <td>
-                      <div (click)="trClicked(hero.Id)">
-                        {{ hero.Company }}
-                      </div>
-                    </td> -->
+                    <td>(</td>
+                    <td
+                      [innerHTML]="hero.ExchangeName"
+                      (click)="trClicked(hero.Id)"
+                    ></td>
+                    <td>-</td>
+                    <td
+                      [innerHTML]="hero.ScriptCode"
+                      (click)="trClicked(hero.Id)"
+                    ></td>
+                    <td>|</td>
+                    <td>NSE</td>
+                    <td>-</td>
+                    <td
+                      [innerHTML]="hero.Symbol"
+                      (click)="trClicked(hero.Id)"
+                    ></td>
+                    <td>)</td>
                   </tr>
                 </tbody>
               </table>

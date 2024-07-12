@@ -13,7 +13,7 @@ import { data } from '../../assets/data';
 })
 export class ResearchServiceComponent {
 
-  inputVal = '';
+  inputVal = 'hdfc';
   data = data;
   trClicked(strId: string) {
     console.log("hello id ", strId)
