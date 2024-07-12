@@ -6,14 +6,23 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilterPipe implements PipeTransform {
   transform(items: any[], searchText: string): any {
-    // console.log("items is : " , items)
+
+    //case
     if (!items) return [];
     if (!searchText) return items;
 
+     //filtered the data which haves tag="stock"
+    let onlyStock:any[] = items.filter(item => item.tag === 'Stock');
+
     searchText = searchText.toLowerCase();
 
-    return items.filter(item => {
+    //filtering as per search text
+    let getCompany:any[] = onlyStock.filter(item => {
       return item.Company.toLowerCase().includes(searchText);
     });
+
+    return getCompany;
+
+
   }
 }

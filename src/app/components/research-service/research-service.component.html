@@ -38,11 +38,15 @@
               <table>
                 <tbody>
                   <tr
-                    style="display: flex; place-content: center;  border: 1px solid black; padding: 5px;"
+                    style="
+                      display: flex;
+                      place-content: center;
+                      border: 1px solid black;
+                      padding: 5px;
+                    "
                     *ngFor="let hero of data | filter : inputVal!"
                   >
                     <td
-
                       [innerHTML]="hero.Company"
                       (click)="trClicked(hero.Id)"
                     ></td>
