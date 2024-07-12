@@ -18,7 +18,11 @@
       <!-- <div *ngIf="!data.ispaid && data.logged_in!" class="getstartedcontent">
         {{ home_button_html }}
       </div> -->
-      <div *ngIf="!data.logged_in!" class="getstartedcontent">
+
+
+      <!-- *ngIf="!data.logged_in!"  -->
+      <div 
+      class="getstartedcontent">
         <div ng-click="getStarted_nl()" class="paybuttonconetnt"><a href="javascript:void(0);">Get Started</a></div>
       </div>
     </div>

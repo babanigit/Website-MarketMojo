@@ -9,10 +9,17 @@
       <div class="banner-img">
         <img style="width:100%;" alt="img" src="https://i.marketsmojo.com/mojoprofessional/verdict_banner0906.png" />
       </div>
-      <div *ngIf="!data.ispaid && data.logged_in!" class="mojobuttonbanner">
+
+      <!-- *ngIf="!data.ispaid && data.logged_in!" -->
+      <div 
+      class="mojobuttonbanner">
         {{ home_button_html }}
       </div>
-      <div *ngIf="!data.logged_in!" class="mojobuttonbanner">
+
+      
+      <!-- *ngIf="!data.logged_in!"  -->
+      <div 
+      class="mojobuttonbanner">
         <div ng-click="getStarted_nl()" class="paybuttonconetnt"><a href="javascript:void(0);">Get Started</a></div>
       </div>
     </div>
