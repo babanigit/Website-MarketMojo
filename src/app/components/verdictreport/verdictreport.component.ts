@@ -10,16 +10,12 @@ import { IReport_Response } from '../../model/ReportResponse';
 })
 export class VerdictreportComponent {
 
-  constructor(){
-    this.myEvent.emit(false);
 
-  }
-
-  @Output() myEvent = new EventEmitter<boolean>();
+  @Output() myEvent2 = new EventEmitter<boolean>();
 
   @Input() reportData!: IReport_Response; //props
 
   onClose() {
-    this.myEvent.emit(true);
+    this.myEvent2.emit(true);
   }
 }

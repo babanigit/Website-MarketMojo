@@ -1,21 +1,17 @@
-
 <!-- <app-main /> -->
 
 <app-research-service
-(myEvent)="recievedDataEvent($event)"
-(myEvent2)="recievedStateEvent($event)"
-
-
+  (myEvent)="recievedDataEvent($event)"
+  (myEvent2)="recievedStateEvent($event)"
 />
 
 <!-- report -->
 <app-verdictreport
- [hidden]="inputData.length < 1 || boxState"
- *ngFor="let item of ReportResponse | filterReport :inputData  "
- [reportData]="item"
- (myEvent)="recievedDataEvent2($event)"
-
- />
+  [hidden]="inputData.length < 1 || boxState"
+  *ngFor="let item of ReportResponse | filterReport : inputData"
+  [reportData]="item"
+  (myEvent2)="recievedDataEvent2($event)"
+/>
 
 <app-verdict1 />
 <app-verdict2 />
