@@ -6,6 +6,7 @@ import { Verdict2Component } from './components/verdict2/verdict2.component';
 import { Verdict3Component } from './components/verdict3/verdict3.component';
 import { CommonModule } from '@angular/common';
 import { ResearchServiceComponent } from './components/research-service/research-service.component';
+import { VerdictreportComponent } from './components/verdictreport/verdictreport.component';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,7 @@ import { ResearchServiceComponent } from './components/research-service/research
     Verdict2Component,
     Verdict3Component,
     ResearchServiceComponent,
+    VerdictreportComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

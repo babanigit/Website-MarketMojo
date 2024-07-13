@@ -2,6 +2,8 @@
 
 export const ReportResponse = [
 
+    // 1. Indian Railway Finance Corporation -
+
     {
         "code": 200,
         "message": "success",
@@ -102,6 +104,9 @@ export const ReportResponse = [
             "show_fallstock": "no"
         }
     },
+
+
+    // tcs
 
     {
         "code": 200,
@@ -214,6 +219,8 @@ export const ReportResponse = [
         }
     },
 
+    // hdfc
+
     {
         "code": 200,
         "message": "success",
@@ -264,6 +271,8 @@ export const ReportResponse = [
                 "wk_high52": 1791.9,
                 "wk_low52": 1363.45
             },
+
+            // cover page
             "cover_page_data": {
                 "cover_headline": "Strong </br>Long Term Fundamentals ",
                 "cover_summary": [
@@ -324,6 +333,8 @@ export const ReportResponse = [
             "show_fallstock": "no"
         }
     },
+
+    // infosys
 
 
     {
@@ -437,6 +448,7 @@ export const ReportResponse = [
         }
     },
 
+    // icici
 
     {
         "code": 200,

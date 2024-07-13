@@ -53,7 +53,7 @@
                     ></td>
                     <td>(</td>
                     <td
-                      [innerHTML]="hero.ExchangeName"
+                      [innerHTML]="hero.ExchangeName | uppercase"
                       (click)="trClicked(hero.Id)"
                     ></td>
                     <td>-</td>
