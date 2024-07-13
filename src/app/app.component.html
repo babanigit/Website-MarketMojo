@@ -1,10 +1,17 @@
 
 <!-- <app-main /> -->
 
-<app-research-service />
+<app-research-service
+(myEvent)="recievedDataEvent($event)"
+
+/>
 
 <!-- report -->
-<app-verdictreport [hidden]="false" />
+<app-verdictreport
+ [hidden]="false"
+ *ngFor="let item of ReportResponse | filterReport :inputData  "
+ [sname]="item.data.stock_details.sname"
+ />
 
 <app-verdict1 />
 <app-verdict2 />

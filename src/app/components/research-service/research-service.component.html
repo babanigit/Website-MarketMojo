@@ -46,6 +46,7 @@
                       cursor: pointer; /* Add cursor pointer for hover effect */
                     "
                     *ngFor="let hero of data | filter : inputVal"
+                    (click)="OnHandleClick()"
                   >
                     <td
                       [innerHTML]="hero.Company"

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FilterPipe } from '../../pipe/filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { data } from '../../assets/data';
@@ -13,6 +13,8 @@ import { data } from '../../assets/data';
 })
 export class ResearchServiceComponent {
 
+  @Output() myEvent = new EventEmitter<string>();
+
   inputVal = 'hdfc';
   data = data;
   trClicked(strId: string) {
@@ -20,7 +22,8 @@ export class ResearchServiceComponent {
   }
 
   OnHandleClick() {
-    console.log('hello there', this.inputVal);
+    console.log('hello there input value have sended', this.inputVal);
+    this.myEvent.emit(this.inputVal);
   }
 
 

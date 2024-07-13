@@ -7,6 +7,9 @@ import { Verdict3Component } from './components/verdict3/verdict3.component';
 import { CommonModule } from '@angular/common';
 import { ResearchServiceComponent } from './components/research-service/research-service.component';
 import { VerdictreportComponent } from './components/verdictreport/verdictreport.component';
+import { ReportResponse } from './assets/getRespone';
+import { IReport_Response } from './model/ReportResponse';
+import { FilterReportPipe } from './pipe/filter-report.pipe';
 
 @Component({
   selector: 'app-root',
@@ -19,11 +22,18 @@ import { VerdictreportComponent } from './components/verdictreport/verdictreport
     Verdict2Component,
     Verdict3Component,
     ResearchServiceComponent,
-    VerdictreportComponent
+    VerdictreportComponent,
+    FilterReportPipe,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'website-mm';
+  ReportResponse = ReportResponse;
+  inputData: string = '';
+
+  recievedDataEvent(e: string) {
+    this.inputData = e;
+  }
 }
