@@ -18,6 +18,7 @@
                   style="width: 400px"
                   type="text"
                   [(ngModel)]="inputVal"
+                  (click)="onInputClick()"
                 />
 
                 <button
@@ -32,7 +33,7 @@
 
             <!-- Filtering and displaying results -->
             <div
-              [hidden]="inputVal.length <= 1"
+              [hidden]="inputVal.length <= 1 || filterState "
               style="display: flex; place-content: center"
             >
               <table>
@@ -46,7 +47,7 @@
                       cursor: pointer; /* Add cursor pointer for hover effect */
                     "
                     *ngFor="let hero of data | filter : inputVal"
-                    (click)="OnHandleClick()"
+                    (click)="onResponseClick()"
                   >
                     <td
                       [innerHTML]="hero.Company"

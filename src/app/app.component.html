@@ -3,14 +3,18 @@
 
 <app-research-service
 (myEvent)="recievedDataEvent($event)"
+(myEvent2)="recievedStateEvent($event)"
+
 
 />
 
 <!-- report -->
 <app-verdictreport
- [hidden]="false"
+ [hidden]="inputData.length < 1 || boxState"
  *ngFor="let item of ReportResponse | filterReport :inputData  "
- [sname]="item.data.stock_details.sname"
+ [reportData]="item"
+ (myEvent)="recievedDataEvent2($event)"
+
  />
 
 <app-verdict1 />

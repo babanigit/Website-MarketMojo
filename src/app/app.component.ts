@@ -32,8 +32,17 @@ export class AppComponent {
   title = 'website-mm';
   ReportResponse = ReportResponse;
   inputData: string = '';
+  boxState = false;
 
   recievedDataEvent(e: string) {
     this.inputData = e;
+  }
+
+  recievedDataEvent2(e: boolean) {
+    this.boxState = e;
+  }
+
+  recievedStateEvent(e: boolean) {
+    this.boxState = e;
   }
 }

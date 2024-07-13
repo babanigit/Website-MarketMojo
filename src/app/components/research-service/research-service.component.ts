@@ -14,17 +14,28 @@ import { data } from '../../assets/data';
 export class ResearchServiceComponent {
 
   @Output() myEvent = new EventEmitter<string>();
+  @Output() myEvent2 = new EventEmitter<boolean>();
 
+
+  filterState = false;
   inputVal = 'hdfc';
   data = data;
   trClicked(strId: string) {
-    console.log("hello id ", strId)
+    console.log('hello id ', strId);
+  }
+
+  onResponseClick() {
+    this.myEvent.emit(this.inputVal);
+    this.myEvent2.emit(false);
+
+    this.filterState = true;
+  }
+
+  onInputClick() {
+    this.filterState = false;
   }
 
   OnHandleClick() {
     console.log('hello there input value have sended', this.inputVal);
-    this.myEvent.emit(this.inputVal);
   }
-
-
 }
