@@ -1,15 +1,90 @@
-<div class="card text-center" style="margin: 10px; height: 70vh;">
-  <div class="card-header" style=" text-align: end;">
-    <button (click)="onClose()" >
-      x
-    </button>
+<div class="card text-center" style="margin: 10px; height: 87vh">
+  <div class="" style="text-align: end; padding-right: 20px; padding-top: 20px">
+    <button (click)="onClose()">x</button>
   </div>
   <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+
+    <!-- here -->
+
+    <div class="container" style="background-color: lightcyan; height: 100%">
+      <div class="row" style="height: 100%">
+        <div class="col-md-6">hello2</div>
+        <div
+          class="col-md-6 no-mob no-tab2"
+          style="
+            width: full;
+            height: 100%;
+            display: flex;
+            place-content: center;
+            place-items: center;
+          "
+        >
+          <div
+            style="
+              height: 95%;
+              width: 65%;
+              background-color: green;
+              display: flex;
+              place-content: center;
+            "
+          >
+            <div
+              class=""
+              style="
+                height: 96%;
+                width: 90%;
+                color: aliceblue;
+                background-color: rgb(19, 35, 19);
+              "
+            >
+              <div class="col" style="height: 100%; width: 100%; display: grid">
+                <div style="background: lightslategray; display: grid">
+                  <div>
+
+                    <div>
+                      mojo professional
+                    </div>
+                    <div>
+
+                    </div>
+                    {{ reportData.data.stock_details.sname }}
+                  </div>
+
+                  <div
+                    style="
+                    background-color: lightcoral;
+                      display: grid;
+                      justify-items: start;
+                      align-items: end;
+                    "
+                  >
+                  <!-- text -->
+                    <div
+                      style="
+                        font-weight: 800;
+                        font-size: x-large;
+                        text-align: left;
+                        padding-left: 10px;
+                      "
+                      [innerHTML]="
+                        reportData.data.cover_page_data.cover_headline
+                      "
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div style="">hello2</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- here -->
   </div>
-  <div class="card-footer text-body-secondary">
+  <!-- <div class="card-footer text-body-secondary">
     2 days ago
-  </div>
+  </div> -->
 </div>
