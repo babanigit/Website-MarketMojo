@@ -12,7 +12,6 @@ import { data } from '../../assets/data';
   styleUrl: './research-service.component.css',
 })
 export class ResearchServiceComponent {
-
   @Output() myEvent = new EventEmitter<string>();
   @Output() myEvent2 = new EventEmitter<boolean>();
 
@@ -24,8 +23,8 @@ export class ResearchServiceComponent {
     console.log('hello id ', strId);
   }
 
-  onResponseClick(sname?:string) {
-    console.log("onResponseClicked : ", sname)
+  onResponseClick(sname?: string) {
+    console.log('onResponseClicked : ', sname);
     this.myEvent.emit(this.inputVal);
     this.myEvent2.emit(false);
     this.filterState = true;
@@ -37,6 +36,5 @@ export class ResearchServiceComponent {
 
   OnHandleClick() {
     console.log('hello there input value have sended', this.inputVal);
-
   }
 }

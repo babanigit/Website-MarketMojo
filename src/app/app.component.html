@@ -1,5 +1,6 @@
 <!-- <app-main /> -->
 
+<!-- search -->
 <app-research-service
   (myEvent)="recievedDataEvent($event)"
   (myEvent2)="recievedStateEvent($event)"
@@ -8,10 +9,7 @@
 <!-- report -->
 <!-- inputData.length < 1 || boxState -->
 <app-verdictreport
-  [hidden]="
-  inputData.length < 1 ||
-   boxState
-  "
+  [hidden]="inputData.length < 1 || boxState"
   *ngFor="let item of ReportResponse | filterReport : inputData"
   [reportData]="item"
   (myEvent2)="recievedDataEvent2($event)"
@@ -22,6 +20,6 @@
 <app-verdict3 />
 
 <!-- footer -->
- <app-verdictfooter />
+<app-verdictfooter />
 
 <router-outlet />
