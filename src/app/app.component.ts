@@ -8,8 +8,9 @@ import { CommonModule } from '@angular/common';
 import { ResearchServiceComponent } from './components/research-service/research-service.component';
 import { VerdictreportComponent } from './components/verdictreport/verdictreport.component';
 import { ReportResponse } from './assets/getRespone';
-import { IReport_Response } from './model/ReportResponse';
+// import { IReport_Response } from './model/ReportResponse';
 import { FilterReportPipe } from './pipe/filter-report.pipe';
+import { VerdictfooterComponent } from './components/verdictfooter/verdictfooter.component';
 
 @Component({
   selector: 'app-root',
@@ -24,6 +25,7 @@ import { FilterReportPipe } from './pipe/filter-report.pipe';
     ResearchServiceComponent,
     VerdictreportComponent,
     FilterReportPipe,
+    VerdictfooterComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

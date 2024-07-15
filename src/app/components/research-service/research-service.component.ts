@@ -16,18 +16,18 @@ export class ResearchServiceComponent {
   @Output() myEvent = new EventEmitter<string>();
   @Output() myEvent2 = new EventEmitter<boolean>();
 
-
   filterState = false;
   inputVal = 'hdfc';
   data = data;
+
   trClicked(strId: string) {
     console.log('hello id ', strId);
   }
 
-  onResponseClick() {
+  onResponseClick(sname?:string) {
+    console.log("onResponseClicked : ", sname)
     this.myEvent.emit(this.inputVal);
     this.myEvent2.emit(false);
-
     this.filterState = true;
   }
 
@@ -37,5 +37,6 @@ export class ResearchServiceComponent {
 
   OnHandleClick() {
     console.log('hello there input value have sended', this.inputVal);
+
   }
 }

@@ -38,6 +38,8 @@
             >
               <table>
                 <tbody>
+
+                  <!-- mapping -->
                   <tr
                     style="
                       display: flex;
@@ -47,7 +49,7 @@
                       cursor: pointer; /* Add cursor pointer for hover effect */
                     "
                     *ngFor="let hero of data | filter : inputVal"
-                    (click)="onResponseClick()"
+                    (click)="onResponseClick(hero.sname)"
                   >
                     <td
                       [innerHTML]="hero.Company"

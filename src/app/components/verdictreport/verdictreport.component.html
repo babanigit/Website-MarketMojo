@@ -1,16 +1,26 @@
-<div class="card text-center" style="min-height: 95vh; height: auto">
+<div class="card text-center" style="min-height: 95vh;">
   <div style="text-align: end; padding-right: 20px; padding-top: 20px">
     <button (click)="onClose()">x</button>
   </div>
   <div class="card-body">
+
+    <div style="font-weight: 600; padding: 40px;">
+      <div style="font-weight: 700; font-size: x-large;">
+        {{reportData.data.stock_details.sname}} Verdict Report
+      </div>
+      <div>
+        This Real-Time Stock Analysis Report was generated on 15th July 2024 at 02:43 PM
+      </div>
+    </div>
+
     <!-- background-color: lightcyan; -->
     <div class="container" style="
 
-       height: 80vh"
+       height: 72vh"
       >
       <div class="row" style="height: 100%">
         <div class="col-md-6">
-          ... hello
+
         </div>
         <div class="col-md-6">
           <div
