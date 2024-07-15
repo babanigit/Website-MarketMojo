@@ -1,79 +1,135 @@
-<div class="card text-center" style="margin: 10px; height: 87vh">
-  <div class="" style="text-align: end; padding-right: 20px; padding-top: 20px">
+<div class="card text-center" style="min-height: 95vh; height: auto">
+  <div style="text-align: end; padding-right: 20px; padding-top: 20px">
     <button (click)="onClose()">x</button>
   </div>
   <div class="card-body">
-
-    <!-- here -->
-
-    <div class="container" style="background-color: lightcyan; height: 100%">
+    <div class="container" style="background-color: lightcyan; height: 80vh">
       <div class="row" style="height: 100%">
-        <div class="col-md-6">hello2</div>
-        <div
-          class="col-md-6 no-mob no-tab2"
-          style="
-            width: full;
-            height: 100%;
-            display: flex;
-            place-content: center;
-            place-items: center;
-          "
-        >
+        <div class="col-md-6">Column 1 Content</div>
+        <div class="col-md-6">
           <div
             style="
-              height: 95%;
+              height: 100%;
               width: 65%;
               background-color: green;
               display: flex;
-              place-content: center;
+              justify-content: center;
             "
           >
             <div
-              class=""
               style="
                 height: 96%;
                 width: 90%;
                 color: aliceblue;
                 background-color: rgb(19, 35, 19);
+                display: grid;
+                grid-template-rows: 50% 50%;
               "
             >
-              <div class="col" style="height: 100%; width: 100%; display: grid">
-                <div style="background: lightslategray; display: grid">
-                  <div>
-
-                    <div>
-                      mojo professional
-                    </div>
-                    <div>
-
-                    </div>
-                    {{ reportData.data.stock_details.sname }}
-                  </div>
-
-                  <div
-                    style="
-                    background-color: lightcoral;
-                      display: grid;
-                      justify-items: start;
-                      align-items: end;
-                    "
-                  >
-                  <!-- text -->
-                    <div
-                      style="
-                        font-weight: 800;
-                        font-size: x-large;
-                        text-align: left;
-                        padding-left: 10px;
-                      "
-                      [innerHTML]="
-                        reportData.data.cover_page_data.cover_headline
-                      "
-                    ></div>
+              <!-- Main Content Here -->
+              <div
+                style="
+                  background: lightslategray;
+                  display: grid;
+                  grid-template-rows: 50% 50%;
+                "
+              >
+                <div style="display: flex; flex-direction: column">
+                  <div style="margin-bottom: 0">mojo professional</div>
+                  <h1 style="font-weight: 300; font-size: 5em; margin: 0">
+                    VERDICT
+                  </h1>
+                  <div style="text-align: right; margin: 0">
+                    Report as on 15 July 2024 at 12:01 PM
                   </div>
                 </div>
+
+                <div
+                  style="
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: flex-end;
+                  "
+                >
+                  <div
+                    [innerHTML]="reportData.data.cover_page_data.cover_headline"
+                    style="
+                      font-weight: 800;
+                      font-size: x-large;
+                      text-align: left;
+                      padding: 10px;
+                    "
+                  ></div>
+                </div>
+              </div>
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: 50% 50%;
+                  padding: 5px;
+                "
+              >
+                <!-- div1 -->
+                <div style="font-size: smaller; text-align: left">
+                  <div>5 Consecutive Positive Results</div>
+                  <div>Bullish</div>
+                  <div>Technical Trend: High (38.38%)</div>
+                  <div>Institutional Holding: Market Beating Returns</div>
+                  <div>Last 1 Year: HDFC AMC</div>
+                </div>
+
+                <!-- div2 -->
                 <div>
-                  <div style="">hello2</div>
+                  <div style="text-align: left">
+                    <h2
+                      style="
+                        background: green;
+                        display: flex;
+                        width: max-content;
+                        padding: 6px;
+                      "
+                    >
+                      Buy
+                    </h2>
+                    <p>CMP: 4,143.55</p>
+                  </div>
+
+                  <div style="font-size: x-small; text-align: left">
+                    <p>STOCK INFO</p>
+
+                    <div>
+                      <span>BSE -</span>
+                      <span>541729</span>
+                    </div>
+                    <div>
+                      <span>NSE -</span>
+                      <span>HDFCAMC</span>
+                    </div>
+                    <div>
+                      <span>Market Cap -</span>
+                      <span>Large Cap (Rs. 88,497 cr)</span>
+                    </div>
+                    <div>
+                      <span>Sector -</span>
+                      <span>Finance/NBFC</span>
+                    </div>
+                    <div>
+                      <span>52 w H/L -</span>
+                      <span>(Rs.) 4262.5 / 2320.2</span>
+                    </div>
+                    <div>
+                      <span>Dividend Yield -</span>
+                      <span>1.68%</span>
+                    </div>
+                    <div>
+                      <span>Return on Equity -</span>
+                      <span>27.49%</span>
+                    </div>
+                    <div>
+                      <span>Price to Book -</span>
+                      <span>12.59</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -81,10 +137,5 @@
         </div>
       </div>
     </div>
-
-    <!-- here -->
   </div>
-  <!-- <div class="card-footer text-body-secondary">
-    2 days ago
-  </div> -->
 </div>

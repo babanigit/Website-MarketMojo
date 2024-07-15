@@ -9,7 +9,8 @@
 <!-- inputData.length < 1 || boxState -->
 <app-verdictreport
   [hidden]="
-false
+  inputData.length < 1 ||
+   boxState
   "
   *ngFor="let item of ReportResponse | filterReport : inputData"
   [reportData]="item"
