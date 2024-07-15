@@ -3,9 +3,15 @@
     <button (click)="onClose()">x</button>
   </div>
   <div class="card-body">
-    <div class="container" style="background-color: lightcyan; height: 80vh">
+    <!-- background-color: lightcyan; -->
+    <div class="container" style="
+
+       height: 80vh"
+      >
       <div class="row" style="height: 100%">
-        <div class="col-md-6">Column 1 Content</div>
+        <div class="col-md-6">
+          ... hello
+        </div>
         <div class="col-md-6">
           <div
             style="
@@ -29,7 +35,6 @@
               <!-- Main Content Here -->
               <div
                 style="
-                  background: lightslategray;
                   display: grid;
                   grid-template-rows: 50% 50%;
                 "
@@ -39,7 +44,7 @@
                   <h1 style="font-weight: 300; font-size: 5em; margin: 0">
                     VERDICT
                   </h1>
-                  <div style="text-align: right; margin: 0">
+                  <div style="text-align: right; margin: 0; padding-right: 3px; font-size: small;">
                     Report as on 15 July 2024 at 12:01 PM
                   </div>
                 </div>
@@ -54,6 +59,7 @@
                   <div
                     [innerHTML]="reportData.data.cover_page_data.cover_headline"
                     style="
+                    color: green;
                       font-weight: 800;
                       font-size: x-large;
                       text-align: left;
@@ -70,18 +76,26 @@
                 "
               >
                 <!-- div1 -->
-                <div style="font-size: smaller; text-align: left">
-                  <div>5 Consecutive Positive Results</div>
-                  <div>Bullish</div>
-                  <div>Technical Trend: High (38.38%)</div>
-                  <div>Institutional Holding: Market Beating Returns</div>
-                  <div>Last 1 Year: HDFC AMC</div>
+
+                <div style="font-size: smaller; text-align: left ; border-right: 1px solid #ccc;">
+                  <!-- map -->
+                  <div
+                    *ngFor="
+                      let summary of reportData.data.cover_page_data.cover_summary
+                    "
+                  >
+                    <div>
+                      <strong>{{ summary.big_txt }}</strong
+                      ><br />
+                      <span>{{ summary.small_txt }}</span>
+                    </div>
+                  </div>
                 </div>
 
                 <!-- div2 -->
-                <div>
+                <div style="padding-left: 6px;">
                   <div style="text-align: left">
-                    <h2
+                    <h5
                       style="
                         background: green;
                         display: flex;
@@ -89,45 +103,59 @@
                         padding: 6px;
                       "
                     >
-                      Buy
-                    </h2>
-                    <p>CMP: 4,143.55</p>
+                    {{reportData.data.score_text }}
+                    </h5>
+                    <div>
+                      <span>CMP: </span>
+                      <span>{{reportData.data.price_info.cmp }}</span>
+                    </div>
                   </div>
 
-                  <div style="font-size: x-small; text-align: left">
-                    <p>STOCK INFO</p>
+                  <br>
 
+                  <div style="font-size: x-small; text-align: left">
+                    <div>STOCK INFO:- </div>
+                    <!-- bse/nse -->
                     <div>
-                      <span>BSE -</span>
-                      <span>541729</span>
+                      <span>BSE - </span>
+                      <span>{{reportData.data.stock_details.jan31_high_2018.bse }}</span>
+                      <span> /</span>
+                      <span>NSE - </span>
+                      <span>{{reportData.data.stock_details.jan31_high_2018.nse }}</span>
                     </div>
+
+                    <!-- mcap -->
                     <div>
-                      <span>NSE -</span>
-                      <span>HDFCAMC</span>
+                      <span>Market Cap - </span>
+                      <span>{{reportData.data.price_info.mcap_class }}</span>
                     </div>
+                    <!-- sector -->
                     <div>
-                      <span>Market Cap -</span>
-                      <span>Large Cap (Rs. 88,497 cr)</span>
+                      <span>Sector - </span>
+                      <span>{{reportData.data.stock_details.ind_name }}</span>
                     </div>
-                    <div>
-                      <span>Sector -</span>
-                      <span>Finance/NBFC</span>
-                    </div>
+
+                    <!--  -->
                     <div>
                       <span>52 w H/L -</span>
                       <span>(Rs.) 4262.5 / 2320.2</span>
                     </div>
+
+                    <!-- div_yeild  -->
                     <div>
-                      <span>Dividend Yield -</span>
-                      <span>1.68%</span>
+                      <span>Dividend Yield - </span>
+                      <span>{{reportData.data.price_info.div_yeild }}</span>
                     </div>
+
+                    <!-- deb_equity -->
                     <div>
                       <span>Return on Equity -</span>
-                      <span>27.49%</span>
+                      <span>{{reportData.data.price_info.deb_equity }}</span>
                     </div>
+
                     <div>
                       <span>Price to Book -</span>
-                      <span>12.59</span>
+                      <span>{{reportData.data.price_info.price_to_book }}</span>
                     </div>
                   </div>
                 </div>
