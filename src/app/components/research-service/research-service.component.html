@@ -15,7 +15,7 @@
               <h3>Verdict is the World's 1st Real-Time Research Service​</h3>
               <div style="display: flex; place-content: center">
                 <input
-                  style="width: 400px; border-color: aqua; "
+                  style="width: 400px; border-color: aqua"
                   type="text"
                   [(ngModel)]="inputVal"
                   (click)="onInputClick()"
@@ -23,8 +23,8 @@
 
                 <button
                   type="submit"
-                  class="btn "
-                  style="background-color: aqua;"
+                  class="btn"
+                  style="background-color: aqua"
                   (click)="OnHandleClick()"
                 >
                   Search
@@ -34,49 +34,60 @@
 
             <!-- Filtering and displaying results -->
             <div
-              [hidden]="inputVal.length <= 1 || filterState "
+              [hidden]="inputVal.length <= 1 || filterState"
               style="display: flex; place-content: center"
             >
-              <table>
-                <tbody>
+              <ul class="data-ul" style="list-style-type: none; padding: 0">
+                <li
+                  style="
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid black;
+                    padding: 5px;
+                    cursor: pointer; /* Add cursor pointer for hover effect */
+                  "
+                  *ngFor="let hero of data | filter : inputVal"
+                  (click)="onResponseClick(hero.sname)"
+                >
+                  <span
+                    [innerHTML]="hero.Company"
+                  ></span>
+                  (<span
+                    [innerHTML]="hero.ExchangeName | uppercase"
+                  ></span>
+                  -
+                  <span
+                    [innerHTML]="hero.ScriptCode"
+                  ></span>
+                  | NSE -
+                  <span
+                    [innerHTML]="hero.Symbol"
+                  ></span
+                  >)
+                </li>
+              </ul>
 
-                  <!-- mapping -->
-                  <tr
-                    style="
-                      display: flex;
-                      place-content: center;
-                      border: 1px solid black;
-                      padding: 5px;
-                      cursor: pointer; /* Add cursor pointer for hover effect */
-                    "
-                    *ngFor="let hero of data | filter : inputVal"
-                    (click)="onResponseClick(hero.sname)"
-                  >
-                    <td
-                      [innerHTML]="hero.Company"
-                      (click)="trClicked(hero.Id)"
-                    ></td>
-                    <td>(</td>
-                    <td
-                      [innerHTML]="hero.ExchangeName | uppercase"
-                      (click)="trClicked(hero.Id)"
-                    ></td>
-                    <td>-</td>
-                    <td
-                      [innerHTML]="hero.ScriptCode"
-                      (click)="trClicked(hero.Id)"
-                    ></td>
-                    <td>|</td>
-                    <td>NSE</td>
-                    <td>-</td>
-                    <td
-                      [innerHTML]="hero.Symbol"
-                      (click)="trClicked(hero.Id)"
-                    ></td>
-                    <td>)</td>
-                  </tr>
-                </tbody>
-              </table>
+              <!-- if data notfound -->
+              <ul
+                *ngIf="data.length === 0"
+                style="list-style-type: none; padding: 0; text-align: center"
+              >
+              <!-- [hidden]="data.length < 0 " -->
+                <li
+
+                  style="
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid black;
+                    padding: 5px;
+                  "
+                >
+                  No results found
+                </li>
+              </ul>
+
             </div>
           </div>
         </div>

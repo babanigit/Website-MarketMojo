@@ -16,18 +16,21 @@ export class ResearchServiceComponent {
   @Output() myEvent2 = new EventEmitter<boolean>();
 
   filterState = false;
-  inputVal = 'hdfc';
-  data = data;
+  inputVal = '';
+  data: any[] = [];
+  hero: any;
 
-  trClicked(strId: string) {
-    console.log('hello id ', strId);
+  constructor() {
+    this.data = data;
   }
+
 
   onResponseClick(sname?: string) {
     console.log('onResponseClicked : ', sname);
     this.myEvent.emit(this.inputVal);
     this.myEvent2.emit(false);
     this.filterState = true;
+    this.inputVal = '';
   }
 
   onInputClick() {

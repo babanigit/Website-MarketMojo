@@ -1,6 +1,7 @@
 /* five */
 .disclimertextnew {
   text-align: center;
+  color: gray;
 }
 
 /* four */
@@ -22,15 +23,13 @@
 
 .list14 .stock-name {
   text-decoration: none; /* Remove underline from links */
-  color: aliceblue; /* Link color */
+  color: gray; /* Link color */
   padding: 5px 10px; /* Padding around each link */
-  border: 1px solid #ccc; /* Border around each link */
-  border-radius: 4px; /* Rounded corners */
+  border-left: 1px solid #ccc; /* Border around each link */
 }
 
 .list14 .stock-name:hover {
-  background-color: #f0f0f0;
-  color: #333; /* Background color on hover */
+  text-decoration: underline; /* Underline the link on hover */
 }
 
 /* three */
@@ -59,7 +58,7 @@
 
 .copyrightcontent2 {
   background-color: rgb(30, 30, 35);
-  color: gainsboro;
+  color: gray;
   font-size: small;
 }
 

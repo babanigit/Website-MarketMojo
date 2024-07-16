@@ -21,6 +21,8 @@ export class FilterPipe implements PipeTransform {
       return item.Company.toLowerCase().includes(searchText);
     });
 
+    console.log("the data is : ",getCompany)
+
     return getCompany;
   }
 }
