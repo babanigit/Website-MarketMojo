@@ -11,6 +11,7 @@ import { ReportResponse } from './assets/getRespone';
 // import { IReport_Response } from './model/ReportResponse';
 import { FilterReportPipe } from './pipe/filter-report.pipe';
 import { VerdictfooterComponent } from './components/verdictfooter/verdictfooter.component';
+import { VerdictloadingComponent } from './components/verdictloading/verdictloading.component';
 
 @Component({
   selector: 'app-root',
@@ -25,7 +26,8 @@ import { VerdictfooterComponent } from './components/verdictfooter/verdictfooter
     ResearchServiceComponent,
     VerdictreportComponent,
     FilterReportPipe,
-    VerdictfooterComponent
+    VerdictfooterComponent,
+    VerdictloadingComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

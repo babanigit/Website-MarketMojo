@@ -6,13 +6,17 @@
   (myEvent2)="recievedStateEvent($event)"
 />
 
-<!-- report -->
-<!-- inputData.length < 1 || boxState -->
+<!-- report --> <!-- inputData.length < 1 || boxState -->
 <app-verdictreport
   [hidden]="inputData.length < 1 || boxState"
   *ngFor="let item of ReportResponse | filterReport : inputData"
   [reportData]="item"
   (myEvent2)="recievedDataEvent2($event)"
+/>
+
+<!-- loading -->
+<app-verdictloading
+[hidden]="false"
 />
 
 <app-verdict1 />

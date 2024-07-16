@@ -1,8 +1,7 @@
 /* five */
 .disclimertextnew {
-  display: block;
+  text-align: center;
 }
-
 
 /* four */
 .list14 {
@@ -23,19 +22,20 @@
 
 .list14 .stock-name {
   text-decoration: none; /* Remove underline from links */
-  color: #333; /* Link color */
+  color: aliceblue; /* Link color */
   padding: 5px 10px; /* Padding around each link */
   border: 1px solid #ccc; /* Border around each link */
   border-radius: 4px; /* Rounded corners */
 }
 
 .list14 .stock-name:hover {
-  background-color: #f0f0f0; /* Background color on hover */
+  background-color: #f0f0f0;
+  color: #333; /* Background color on hover */
 }
 
 /* three */
 .copyrte-foot {
-  background-color: #f8f8f8; /* Background color for the footer */
+  color: white;
   padding: 20px 0; /* Padding at the top and bottom */
 }
 
@@ -57,9 +57,11 @@
   color: #333; /* Link color on hover */
 }
 
-
-
-
+.copyrightcontent2 {
+  background-color: rgb(30, 30, 35);
+  color: gainsboro;
+  font-size: small;
+}
 
 /* Ensure the footer stays within the viewport and handles overflow */
 .footer {
@@ -85,4 +87,14 @@
 
 .footer a:hover {
   text-decoration: underline; /* Underline on hover */
+}
+
+.copyrightcontent {
+  font-size: small;
+  color: gainsboro;
+  /* display: flex;
+  justify-content: center;
+  align-items: baseline;
+  height: max-content; */
+
 }
